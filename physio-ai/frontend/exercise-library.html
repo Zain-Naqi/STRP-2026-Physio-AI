@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Exercise Library | PhysioAI</title>
+  <meta name="description" content="A calm, guided collection of digital rehabilitation exercises.">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/exercise-library.css">
+</head>
+<body class="preload library-page">
+  <div class="dashboard-layout">
+    
+    <!-- Top Navigation -->
+    <nav class="dashboard-nav">
+      <div class="nav-container">
+        <a class="nav-brand" href="patient-home.html" style="text-decoration: none;">
+          <div class="nav-logo-icon">P</div>
+          <span class="nav-brand-name">PhysioAI</span>
+        </a>
+        
+        <div class="nav-actions">
+          <button class="icon-btn" aria-label="Notifications">
+            🔔
+          </button>
+          
+          <div class="user-profile-menu dropdown-trigger">
+            <span class="user-greeting">Good Morning, <span class="user-first-name">User</span></span>
+            <div class="avatar user-avatar-text">U</div>
+          </div>
+          
+          <button class="icon-btn logout-btn" aria-label="Sign Out" title="Sign Out">
+            ⎋
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Editorial Content -->
+    <main class="library-shell">
+      
+      <!-- Editorial Intro Header -->
+      <header class="library-intro">
+        <span class="eyebrow">Move at your own pace</span>
+        <h1>Find the movement<br>that feels right.</h1>
+        <p class="library-lede">A carefully curated collection of gentle exercises designed to restore strength, ease movement, and support every stage of your rehabilitation.</p>
+      </header>
+
+      <!-- Featured Spotlight Collection -->
+      <section class="library-feature" aria-label="Featured rehabilitation collection">
+        <div class="feature-copy">
+          <span class="eyebrow">Featured Spotlight</span>
+          <h2>Shoulder care,<br>made simple & calm.</h2>
+          <p>Build confidence, ease joint stiffness, and improve overhead mobility with a short series tailored for everyday comfort.</p>
+          <a class="cta-button-link" href="exercise-category.html?category=shoulder-rehabilitation">
+            <span>Explore Shoulder Exercises</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+        <div class="feature-art">
+          <img src="assets/images/categories/shoulder-rehabilitation.svg" alt="Abstract vector representation of shoulder rehabilitation movement">
+        </div>
+      </section>
+
+      <!-- Search & Category Filters -->
+      <div class="library-controls">
+        <div class="search-box-wrapper">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+          <input type="text" id="category-search" placeholder="Search exercises, target joint, or movement..." aria-label="Search exercise library">
+        </div>
+        
+        <div class="category-tags-filter" role="tablist" aria-label="Filter exercises by region">
+          <button class="filter-chip active" data-group="all" role="tab">All Collections</button>
+          <button class="filter-chip" data-group="upper body" role="tab">Upper Body</button>
+          <button class="filter-chip" data-group="lower body" role="tab">Lower Body</button>
+          <button class="filter-chip" data-group="core & spine" role="tab">Core & Spine</button>
+          <button class="filter-chip" data-group="fine motor" role="tab">Fine Motor</button>
+          <button class="filter-chip" data-group="full body" role="tab">Full Body</button>
+        </div>
+      </div>
+
+      <!-- Categories Section Grid -->
+      <section id="explore" aria-labelledby="category-heading">
+        <div class="category-section-title">
+          <div>
+            <h2 id="category-heading">Explore by Body Area</h2>
+          </div>
+          <p>Select what needs care today</p>
+        </div>
+        <div id="category-grid" class="category-grid">
+          <!-- Dynamically populated by js/exercise-library.js -->
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Support</a>
+      </div>
+      <p>&copy; 2026 PhysioAI. All rights reserved.</p>
+    </footer>
+
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/exercise-library.js"></script>
+</body>
+</html>

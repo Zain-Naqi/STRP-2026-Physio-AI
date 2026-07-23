@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="bgGradBack" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F2F5EF" />
+      <stop offset="100%" stop-color="#D7E2CF" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" rx="24" fill="url(#bgGradBack)"/>
+  <circle cx="200" cy="150" r="95" fill="#FFFFFF" fill-opacity="0.7"/>
+  <!-- Smooth S-curve representing spine alignment and Cat-Cow mobility -->
+  <path d="M200 65 C170 100 230 140 190 195 C170 220 185 240 195 245" stroke="#1C3A32" stroke-width="4.5" stroke-linecap="round"/>
+  <!-- Vertebrae dots -->
+  <circle cx="197" cy="75" r="5" fill="#3A8D7B"/>
+  <circle cx="188" cy="98" r="5" fill="#3A8D7B"/>
+  <circle cx="194" cy="122" r="5" fill="#3A8D7B"/>
+  <circle cx="207" cy="146" r="5" fill="#C87A54"/>
+  <circle cx="203" cy="170" r="5" fill="#C87A54"/>
+  <circle cx="191" cy="195" r="5" fill="#1C3A32"/>
+  <circle cx="187" cy="220" r="5" fill="#1C3A32"/>
+</svg>

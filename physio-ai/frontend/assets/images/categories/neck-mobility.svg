@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="bgGradNeck" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF5EE" />
+      <stop offset="100%" stop-color="#E8DEC9" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" rx="24" fill="url(#bgGradNeck)"/>
+  <circle cx="200" cy="150" r="95" fill="#FFFFFF" fill-opacity="0.65"/>
+  <!-- Head & Cervical Curve -->
+  <circle cx="200" cy="105" r="32" stroke="#1C3A32" stroke-width="4.5"/>
+  <path d="M200 137 C198 160 190 175 160 190 C140 200 125 210 120 230" stroke="#1C3A32" stroke-width="4" stroke-linecap="round"/>
+  <path d="M200 137 C202 160 210 175 240 190 C260 200 275 210 280 230" stroke="#1C3A32" stroke-width="4" stroke-linecap="round"/>
+  <!-- Rotation & Tilt guide rings -->
+  <path d="M150 105 A 50 20 0 0 1 250 105" stroke="#C87A54" stroke-width="3" stroke-dasharray="4 4" stroke-linecap="round"/>
+  <circle cx="250" cy="105" r="4" fill="#C87A54"/>
+</svg>

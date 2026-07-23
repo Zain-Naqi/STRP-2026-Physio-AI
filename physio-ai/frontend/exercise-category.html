@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercises | PhysioAI</title>
+  <meta name="description" content="Explore targeted rehabilitation exercises in this collection.">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/exercise-library.css">
+</head>
+<body class="preload library-page">
+  <div class="dashboard-layout">
+    
+    <!-- Top Navigation -->
+    <nav class="dashboard-nav">
+      <div class="nav-container">
+        <a class="nav-brand" href="patient-home.html" style="text-decoration: none;">
+          <div class="nav-logo-icon">P</div>
+          <span class="nav-brand-name">PhysioAI</span>
+        </a>
+        
+        <div class="nav-actions">
+          <button class="icon-btn" aria-label="Notifications">
+            🔔
+          </button>
+          
+          <div class="user-profile-menu dropdown-trigger">
+            <span class="user-greeting">Good Morning, <span class="user-first-name">User</span></span>
+            <div class="avatar user-avatar-text">U</div>
+          </div>
+          
+          <button class="icon-btn logout-btn" aria-label="Sign Out" title="Sign Out">
+            ⎋
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Category Detail Content Shell -->
+    <main class="exercise-list-shell">
+      
+      <a class="back-link" href="exercise-library.html">
+        <span aria-hidden="true">←</span>
+        <span>Back to Exercise Library</span>
+      </a>
+
+      <header class="category-page-head">
+        <div class="category-head-info">
+          <span class="eyebrow">Exercise Collection</span>
+          <h1 id="category-title">Category Title</h1>
+          <p id="category-description">Loading category guidance and movement descriptions...</p>
+        </div>
+        <div class="category-head-artwork" id="category-artwork">
+          <!-- Populated by JS -->
+        </div>
+      </header>
+
+      <section aria-labelledby="exercise-heading">
+        <div class="category-section-title">
+          <div>
+            <h2 id="exercise-heading">Selected Exercises</h2>
+          </div>
+          <p id="exercise-count">0 Exercises</p>
+        </div>
+        
+        <div id="exercise-list" class="exercise-list-grid">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Support</a>
+      </div>
+      <p>&copy; 2026 PhysioAI. All rights reserved.</p>
+    </footer>
+
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/exercise-library.js"></script>
+</body>
+</html>

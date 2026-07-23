@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="bgGradKnee" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EFF5F4" />
+      <stop offset="100%" stop-color="#CFE0DC" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" rx="24" fill="url(#bgGradKnee)"/>
+  <circle cx="200" cy="150" r="90" fill="#FFFFFF" fill-opacity="0.75"/>
+  <!-- Femur & Tibia hinge (Knee flex/ext) -->
+  <path d="M140 85 L200 150 L275 145" stroke="#1C3A32" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M200 150 L250 215" stroke="#1C3A32" stroke-width="3.5" stroke-dasharray="5 4" stroke-linecap="round"/>
+  <circle cx="200" cy="150" r="10" fill="#3A8D7B"/>
+  <!-- Extension arc -->
+  <path d="M260 205 A 70 70 0 0 0 275 145" stroke="#C87A54" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="275" cy="145" r="4" fill="#C87A54"/>
+</svg>

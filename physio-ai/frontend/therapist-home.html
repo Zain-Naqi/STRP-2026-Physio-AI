@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Physiotherapist Portal | PhysioAI</title>
+  <meta name="description" content="PhysioAI Therapist Dashboard">
+  
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="preload">
+
+  <div class="dashboard-layout">
+    
+    <!-- Top Navigation -->
+    <nav class="dashboard-nav">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <div class="nav-logo-icon">P</div>
+          <span class="nav-brand-name">PhysioAI Portal</span>
+        </div>
+        
+        <div class="nav-actions">
+          <button class="icon-btn" aria-label="Notifications" style="position: relative;">
+            🔔
+            <span style="position: absolute; top: 0; right: 0; width: 8px; height: 8px; background-color: var(--color-error); border-radius: 50%;"></span>
+          </button>
+          
+          <div class="user-profile-menu dropdown-trigger">
+            <span class="user-greeting">Dr. <span class="user-first-name">User</span></span>
+            <div class="avatar user-avatar-text">D</div>
+          </div>
+          
+          <button class="icon-btn logout-btn" aria-label="Sign Out" title="Sign Out">
+            ⎋
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="dashboard-container">
+      
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem;">
+        <div>
+          <h1 class="hero-title" style="color: var(--color-primary); font-size: 2rem; margin-bottom: 0.5rem;">Dashboard Overview</h1>
+          <p class="hero-subtitle" style="color: var(--color-text-secondary); margin-bottom: 0;">Here is what's happening with your patients today.</p>
+        </div>
+        <div class="hero-actions">
+          <a href="#" class="btn-primary" style="width: auto;">+ New Patient</a>
+        </div>
+      </div>
+
+      <!-- Dashboard Summary Metrics -->
+      <section class="grid-4" style="margin-bottom: 3rem;">
+        <div class="metric-card">
+          <div class="metric-header">
+            <span class="metric-title">Active Patients</span>
+            <span class="metric-icon">👥</span>
+          </div>
+          <div class="metric-value">42</div>
+          <div class="metric-trend trend-up">↑ 3 new this week</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-header">
+            <span class="metric-title">Pending Reviews</span>
+            <span class="metric-icon">📋</span>
+          </div>
+          <div class="metric-value">12</div>
+          <div class="metric-trend trend-neutral">Require attention today</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-header">
+            <span class="metric-title">Appointments Today</span>
+            <span class="metric-icon">📅</span>
+          </div>
+          <div class="metric-value">5</div>
+          <div class="metric-trend trend-neutral">Next at 10:30 AM</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-header">
+            <span class="metric-title">Recovery Alerts</span>
+            <span class="metric-icon">⚠️</span>
+          </div>
+          <div class="metric-value">2</div>
+          <div class="metric-trend trend-down">↓ 1 resolved</div>
+        </div>
+      </section>
+
+      <!-- Main Columns -->
+      <div class="grid-2" style="gap: 2rem;">
+        
+        <!-- Left Column -->
+        <div>
+          <!-- Patients Requiring Attention -->
+          <section style="margin-bottom: 3rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <h2 class="section-title" style="margin-bottom: 0;">Patients Requiring Attention</h2>
+              <a href="#" style="font-size: 0.875rem; font-weight: 600;">View All</a>
+            </div>
+            
+            <div class="dashboard-card" style="padding: 0;">
+              <div class="list-group" style="gap: 0;">
+                
+                <div class="list-item" style="border: none; border-bottom: 1px solid var(--color-border); border-radius: 0;">
+                  <div class="list-item-content">
+                    <div class="avatar" style="background-color: #E2E8F0; color: var(--color-text-primary);">AJ</div>
+                    <div>
+                      <div class="list-item-title">Alex Johnson</div>
+                      <div class="list-item-subtitle">Post-op ACL • Last active: 2 days ago</div>
+                    </div>
+                  </div>
+                  <span class="status-badge urgent">Missed Sessions</span>
+                </div>
+
+                <div class="list-item" style="border: none; border-bottom: 1px solid var(--color-border); border-radius: 0;">
+                  <div class="list-item-content">
+                    <div class="avatar" style="background-color: #E2E8F0; color: var(--color-text-primary);">MK</div>
+                    <div>
+                      <div class="list-item-title">Maria Kim</div>
+                      <div class="list-item-subtitle">Rotator Cuff • Form discrepancy detected</div>
+                    </div>
+                  </div>
+                  <span class="status-badge pending">Review Needed</span>
+                </div>
+
+                <div class="list-item" style="border: none; border-radius: 0;">
+                  <div class="list-item-content">
+                    <div class="avatar" style="background-color: #E2E8F0; color: var(--color-text-primary);">JD</div>
+                    <div>
+                      <div class="list-item-title">John Doe</div>
+                      <div class="list-item-subtitle">Lower Back • Reached milestone</div>
+                    </div>
+                  </div>
+                  <span class="status-badge good">Update Plan</span>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+          <!-- Recent Exercise Submissions -->
+          <section>
+            <h2 class="section-title">Recent Submissions</h2>
+            <div class="dashboard-card">
+              <div class="list-group">
+                <div class="list-item">
+                  <div class="list-item-content">
+                    <div class="card-icon" style="width: 32px; height: 32px; font-size: 1rem; margin: 0;">▶️</div>
+                    <div>
+                      <div class="list-item-title">Shoulder Abduction</div>
+                      <div class="list-item-subtitle">Submitted by Emily C. • 10 mins ago</div>
+                    </div>
+                  </div>
+                  <a href="#" style="font-size: 0.875rem; font-weight: 600;">Review</a>
+                </div>
+                
+                <div class="list-item">
+                  <div class="list-item-content">
+                    <div class="card-icon" style="width: 32px; height: 32px; font-size: 1rem; margin: 0;">▶️</div>
+                    <div>
+                      <div class="list-item-title">Knee Extension</div>
+                      <div class="list-item-subtitle">Submitted by David W. • 1 hour ago</div>
+                    </div>
+                  </div>
+                  <a href="#" style="font-size: 0.875rem; font-weight: 600;">Review</a>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Right Column -->
+        <div>
+          <!-- Today's Schedule -->
+          <section style="margin-bottom: 3rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <h2 class="section-title" style="margin-bottom: 0;">Today's Schedule</h2>
+              <a href="#" style="font-size: 0.875rem; font-weight: 600;">Calendar</a>
+            </div>
+            
+            <div class="dashboard-card">
+              <div class="list-group">
+                <div class="list-item" style="border-color: var(--color-accent); background-color: var(--color-accent-light);">
+                  <div class="list-item-content">
+                    <div style="font-weight: 700; color: var(--color-primary); width: 60px;">10:30 AM</div>
+                    <div>
+                      <div class="list-item-title">Sarah Jenkins</div>
+                      <div class="list-item-subtitle">Initial Assessment • Room 2</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="list-item">
+                  <div class="list-item-content">
+                    <div style="font-weight: 700; color: var(--color-text-secondary); width: 60px;">1:00 PM</div>
+                    <div>
+                      <div class="list-item-title">Michael Chang</div>
+                      <div class="list-item-subtitle">Progress Review • Telehealth</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="list-item">
+                  <div class="list-item-content">
+                    <div style="font-weight: 700; color: var(--color-text-secondary); width: 60px;">2:45 PM</div>
+                    <div>
+                      <div class="list-item-title">Jessica Alba</div>
+                      <div class="list-item-subtitle">Exercise Form Correction • Room 1</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Exercise Library Quick Access -->
+          <section>
+            <h2 class="section-title">Exercise Management</h2>
+            <div class="grid-2">
+              <a href="#" class="dashboard-card interactive" style="text-decoration: none; padding: 1.25rem;">
+                <div class="card-icon" style="margin-bottom: 0.75rem;">📹</div>
+                <h3 class="card-title" style="font-size: 0.95rem;">Upload Recording</h3>
+                <p class="card-desc" style="font-size: 0.8rem;">Create new exercise templates.</p>
+              </a>
+
+              <a href="#" class="dashboard-card interactive" style="text-decoration: none; padding: 1.25rem;">
+                <div class="card-icon" style="margin-bottom: 0.75rem;">📚</div>
+                <h3 class="card-title" style="font-size: 0.95rem;">Exercise Library</h3>
+                <p class="card-desc" style="font-size: 0.8rem;">Manage existing templates.</p>
+              </a>
+            </div>
+          </section>
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Help Center</a>
+      </div>
+      <p>&copy; 2026 PhysioAI. All rights reserved.</p>
+    </footer>
+
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

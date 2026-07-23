@@ -1,0 +1,287 @@
+/* ─────────────────────────────────────────────────────────────
+   PhysioAI — Authentication Layout and Sliding Transitions
+   ───────────────────────────────────────────────────────────── */
+
+.auth-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--color-bg-base);
+}
+
+/* Left Side: Branding / Movement Illustration */
+.auth-branding {
+  flex: 1.1;
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4rem;
+  overflow: hidden;
+}
+
+.branding-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+  mix-blend-mode: normal;
+  pointer-events: none;
+}
+
+/* Elegant gradient overlay to make branding text readable */
+.auth-branding::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(27, 63, 54, 0.9) 0%, rgba(27, 63, 54, 0.4) 60%, rgba(27, 63, 54, 0.95) 100%);
+  z-index: 1;
+}
+
+.branding-header,
+.branding-footer,
+.branding-content {
+  position: relative;
+  z-index: 2;
+}
+
+.brand-logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-logo-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--color-accent) 0%, #FFFFFF 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--color-primary);
+}
+
+.brand-name {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.branding-content {
+  max-width: 480px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.branding-tagline {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.branding-desc {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+}
+
+.branding-footer {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Right Side: Authentication Forms Panel */
+.auth-panel {
+  flex: 0.9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  position: relative;
+  background-color: var(--color-bg-base);
+}
+
+/* Form Slider Container to allow horizontal slide transition */
+.form-slider-wrapper {
+  width: 100%;
+  max-width: 440px;
+  overflow: hidden;
+  position: relative;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg-card);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(27, 63, 54, 0.05);
+}
+
+.form-slider {
+  display: flex;
+  width: 200%; /* Two pages side-by-side */
+  transition: transform var(--transition-normal);
+}
+
+.auth-card {
+  width: 50%; /* Each page takes exactly half the slider width */
+  padding: 3rem 2.5rem;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sliding active states */
+.form-slider-wrapper.show-register .form-slider {
+  transform: translateX(-50%);
+}
+
+/* Form Headings */
+.auth-header {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.auth-title {
+  font-family: var(--font-heading);
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.auth-subtitle {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.45;
+}
+
+/* Remember Me and Forgot Password Group */
+.form-actions-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.75rem;
+}
+
+.forgot-password-link {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Bottom Card Footer */
+.auth-card-footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
+
+.auth-card-footer a {
+  font-weight: 700;
+}
+
+/* Test Console for easy switching and mock credential helper */
+.dev-console {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  box-shadow: var(--shadow-lg);
+  font-size: 0.8rem;
+  z-index: 100;
+  max-width: 320px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  opacity: 0.9;
+  transition: opacity var(--transition-fast);
+}
+
+.dev-console:hover {
+  opacity: 1;
+}
+
+.dev-console-title {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dev-credential-pill {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  margin-top: 0.25rem;
+  font-family: monospace;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color var(--transition-fast);
+}
+
+.dev-credential-pill:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .auth-branding {
+    padding: 3rem;
+  }
+  
+  .branding-tagline {
+    font-size: 2.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .auth-container {
+    flex-direction: column;
+  }
+  
+  .auth-branding {
+    display: none; /* Hide visual panel on mobile to optimize screen space */
+  }
+  
+  .auth-panel {
+    flex: 1;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+  }
+  
+  .form-slider-wrapper {
+    box-shadow: none;
+    border: none;
+    background-color: transparent;
+  }
+  
+  .auth-card {
+    padding: 2rem 1rem;
+    background-color: var(--color-bg-card);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+  }
+}

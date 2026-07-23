@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="bgGradHand" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5EFEB" />
+      <stop offset="100%" stop-color="#E2D7CE" />
+    </linearGradient>
+    <linearGradient id="accentGradHand" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C87A54" />
+      <stop offset="100%" stop-color="#A65834" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" rx="24" fill="url(#bgGradHand)"/>
+  <circle cx="200" cy="150" r="90" fill="#FFFFFF" fill-opacity="0.6"/>
+  <!-- Gentle Hand & Fingers Wave Lines -->
+  <path d="M140 210 C140 180 155 140 170 120 C175 113 182 110 188 116 C194 122 190 132 182 142 L168 160" stroke="#1C3A32" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M165 110 C170 95 180 90 187 95 C194 100 191 112 183 125 L168 150" stroke="#1C3A32" stroke-width="4" stroke-linecap="round"/>
+  <path d="M185 105 C192 92 202 88 208 94 C214 100 210 112 200 126 L180 155" stroke="#1C3A32" stroke-width="4" stroke-linecap="round"/>
+  <path d="M205 115 C212 105 220 102 225 108 C230 114 225 124 215 136 L195 162" stroke="#1C3A32" stroke-width="4" stroke-linecap="round"/>
+  <!-- Palm and Thumb -->
+  <path d="M140 210 C140 190 130 175 120 170 C112 166 110 158 118 154 C126 150 142 160 158 175" stroke="#1C3A32" stroke-width="4" stroke-linecap="round"/>
+  <!-- Motion arcs -->
+  <path d="M225 80 A 45 45 0 0 1 255 120" stroke="url(#accentGradHand)" stroke-width="3" stroke-dasharray="4 4" stroke-linecap="round"/>
+  <circle cx="255" cy="120" r="4" fill="#C87A54"/>
+  <circle cx="200" cy="150" r="120" stroke="#1C3A32" stroke-opacity="0.05" stroke-width="1.5"/>
+</svg>

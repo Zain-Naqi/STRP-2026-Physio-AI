@@ -1,0 +1,91 @@
+/* ─────────────────────────────────────────────────────────────
+   PhysioAI — Main Design Tokens and Global Styles
+   ───────────────────────────────────────────────────────────── */
+
+/* Import Google Fonts (Inter & Manrope) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Color Palette (Calm, Premium, Human-centered Healthcare) */
+  --color-primary: #1B3F36;       /* Deep Forest Green (Calming, trustworthy) */
+  --color-primary-light: #2A5A4E; /* Lighter shade for hovers */
+  --color-accent: #3A8D7B;        /* Serene Teal */
+  --color-accent-light: #E8F4F1;  /* Soft Teal background tint */
+  
+  --color-bg-base: #F8FAF9;       /* Off-white, soft background */
+  --color-bg-card: #FFFFFF;       /* Pure white for containers */
+  
+  /* Neutral Grays */
+  --color-text-primary: #1C2421;  /* Very dark slate green-gray */
+  --color-text-secondary: #586561;/* Medium slate green-gray */
+  --color-border: #E2E8F0;        /* Light clean borders */
+  --color-border-focus: #3A8D7B;  /* Border color on focus */
+  
+  /* Status Colors */
+  --color-success: #2E7D32;
+  --color-success-bg: #E8F5E9;
+  --color-error: #D32F2F;
+  --color-error-bg: #FFEBEE;
+  --color-warning: #EF6C00;
+  --color-warning-bg: #FFF3E0;
+  
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Manrope', var(--font-sans);
+  
+  /* Shadows (Soft & Elegant) */
+  --shadow-sm: 0 2px 8px rgba(27, 63, 54, 0.04);
+  --shadow-md: 0 8px 24px rgba(27, 63, 54, 0.06);
+  --shadow-lg: 0 16px 40px rgba(27, 63, 54, 0.08);
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* CSS Reset & Defaults */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Accessible focus outline */
+*:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

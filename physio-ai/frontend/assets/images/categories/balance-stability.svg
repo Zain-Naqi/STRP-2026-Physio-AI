@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="bgGradBalance" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F1F6F7" />
+      <stop offset="100%" stop-color="#D4E4E8" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" rx="24" fill="url(#bgGradBalance)"/>
+  <circle cx="200" cy="150" r="95" fill="#FFFFFF" fill-opacity="0.75"/>
+  <!-- Minimal equilibrium & balance scale / single-leg axis line -->
+  <line x1="200" y1="60" x2="200" y2="230" stroke="#1C3A32" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="200" cy="110" r="8" fill="#1C3A32"/>
+  <!-- Concentric stability rings -->
+  <circle cx="200" cy="150" r="70" stroke="#3A8D7B" stroke-width="2" stroke-dasharray="6 4"/>
+  <circle cx="200" cy="150" r="45" stroke="#C87A54" stroke-width="2.5"/>
+  <circle cx="200" cy="150" r="10" fill="#1C3A32"/>
+  <path d="M130 150 L270 150" stroke="#1C3A32" stroke-width="3" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="bgGradWrist" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EFF5F3" />
+      <stop offset="100%" stop-color="#D9E6E2" />
+    </linearGradient>
+    <linearGradient id="accentWrist" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3A8D7B" />
+      <stop offset="100%" stop-color="#1C3A32" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" rx="24" fill="url(#bgGradWrist)"/>
+  <circle cx="200" cy="150" r="90" fill="#FFFFFF" fill-opacity="0.7"/>
+  <!-- Forearm and Wrist Pivot Line -->
+  <path d="M100 210 L190 150 C205 140 220 135 235 140 L270 150" stroke="#1C3A32" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="190" cy="150" r="8" fill="url(#accentWrist)"/>
+  <!-- Gentle Rotation Arc -->
+  <path d="M210 110 A 40 40 0 0 1 250 170" stroke="#C87A54" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 4"/>
+  <path d="M246 174 L253 170 L250 162" stroke="#C87A54" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Soft minimal guide rings -->
+  <circle cx="190" cy="150" r="45" stroke="#1C3A32" stroke-opacity="0.1" stroke-width="2"/>
+</svg>

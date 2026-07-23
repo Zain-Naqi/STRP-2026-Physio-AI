@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="bgGradAnkle" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7F1EC" />
+      <stop offset="100%" stop-color="#E2D4C6" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" rx="24" fill="url(#bgGradAnkle)"/>
+  <circle cx="200" cy="150" r="90" fill="#FFFFFF" fill-opacity="0.75"/>
+  <!-- Lower leg Tibia to Ankle to Foot Heel/Toe -->
+  <path d="M165 75 L175 180 C175 195 185 205 205 205 L265 200 C275 200 280 190 270 185 C255 178 230 178 215 178" stroke="#1C3A32" stroke-width="4.5" stroke-linecap="round"/>
+  <circle cx="175" cy="180" r="8" fill="#C87A54"/>
+  <!-- Ankle rotation circle -->
+  <circle cx="175" cy="180" r="45" stroke="#3A8D7B" stroke-width="2.5" stroke-dasharray="4 4"/>
+  <!-- Heel raise arrow -->
+  <path d="M260 170 L260 150" stroke="#C87A54" stroke-width="3" stroke-linecap="round"/>
+  <path d="M255 155 L260 148 L265 155" stroke="#C87A54" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

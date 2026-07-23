@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="bgGradHip" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF1ED" />
+      <stop offset="100%" stop-color="#EACDC2" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" rx="24" fill="url(#bgGradHip)"/>
+  <circle cx="200" cy="150" r="90" fill="#FFFFFF" fill-opacity="0.75"/>
+  <!-- Pelvic & Femur Abduction stroke -->
+  <path d="M140 130 C170 120 230 120 260 130" stroke="#1C3A32" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M170 125 L150 220" stroke="#1C3A32" stroke-width="4" stroke-linecap="round"/>
+  <!-- Abducted leg -->
+  <path d="M230 125 L275 200" stroke="#1C3A32" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="230" cy="125" r="9" fill="#D97757"/>
+  <!-- Sweep arc -->
+  <path d="M210 210 A 70 70 0 0 0 275 200" stroke="#D97757" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4"/>
+</svg>

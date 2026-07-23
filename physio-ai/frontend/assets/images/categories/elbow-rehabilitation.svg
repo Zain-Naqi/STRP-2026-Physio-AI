@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="bgGradElbow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F2F6F5" />
+      <stop offset="100%" stop-color="#D9E4E1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" rx="24" fill="url(#bgGradElbow)"/>
+  <circle cx="200" cy="150" r="90" fill="#FFFFFF" fill-opacity="0.75"/>
+  <!-- Humerus & Forearm flexion -->
+  <path d="M120 180 L195 180 C210 180 220 170 215 155 L165 90" stroke="#1C3A32" stroke-width="4.5" stroke-linecap="round"/>
+  <circle cx="205" cy="170" r="8" fill="#C87A54"/>
+  <!-- Extension path -->
+  <path d="M215 170 L280 170" stroke="#1C3A32" stroke-width="3" stroke-dasharray="5 4" stroke-opacity="0.5" stroke-linecap="round"/>
+  <!-- Arc arrow -->
+  <path d="M260 165 A 60 60 0 0 0 175 95" stroke="#3A8D7B" stroke-width="3" stroke-linecap="round"/>
+</svg>
