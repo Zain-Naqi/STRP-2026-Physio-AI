@@ -32,6 +32,15 @@ const mockDatabase = {
       created_at: new Date('2025-01-01').toISOString(),
       updated_at: new Date('2025-01-01').toISOString(),
     },
+    {
+      id: '550e8400-e29b-41d4-a716-446655440001',
+      full_name: 'Demo User',
+      email: 'demodr@physioai.com',
+      password: '$mock$password123',
+      role: 'physiotherapist',
+      created_at: new Date('2025-01-01').toISOString(),
+      updated_at: new Date('2025-01-01').toISOString(),
+    },
   ],
 };
 

@@ -179,3 +179,20 @@ Since the frontend uses clean Vanilla CSS and JavaScript, you can open `frontend
    serve frontend
    ```
 3. Open your browser to the URL displayed.
+
+### 3. Start the Exercise Service (Python)
+The exercise recording/authoring and guided-playback pages (`record_exercise.html`, `perform_exercise.html`) talk to a separate FastAPI service that runs the MediaPipe pose-tracking pipeline. The browser owns the webcam; this service only receives frames over a WebSocket and returns annotated frames plus JSON status.
+
+1. Navigate to the service directory:
+   ```bash
+   cd fullbody_RnM
+   ```
+2. (Recommended) create and activate a virtual environment, then install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Start the service in hot-reload mode:
+   ```bash
+   uvicorn server:app --reload --port 8000
+   ```
+   The service must be run from inside `fullbody_RnM/` so its relative `Models/` and `Exercises/` paths resolve correctly. It will be available at [http://localhost:8000](http://localhost:8000), with the frontend connecting to it over `ws://localhost:8000`.

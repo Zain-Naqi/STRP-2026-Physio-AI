@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perform Exercise | PhysioAI</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/exercise-session.css">
+</head>
+<body class="preload">
+  <nav class="dashboard-nav">
+    <div class="nav-container">
+      <a class="nav-brand" href="patient-home.html">
+        <div class="nav-logo-icon">P</div>
+        <span class="nav-brand-name">PhysioAI</span>
+      </a>
+      <a class="session-exit" href="exercise-library.html">Exit session</a>
+    </div>
+  </nav>
+
+  <main class="session-shell">
+    <!-- Exercise details -->
+    <header class="session-header">
+      <div>
+        <span class="session-kicker">Guided session</span>
+        <h1 id="exerciseName">Perform Exercise</h1>
+        <p id="exerciseDescription">Follow the on-screen guide and hold each position.</p>
+      </div>
+      <div id="connectionBadge" class="connection-badge">Ready</div>
+    </header>
+
+    <div class="session-layout">
+      <!-- Camera and live preview -->
+      <section class="camera-section" aria-label="Camera preview">
+        <div class="camera-card">
+          <img id="videoStream" alt="Live guided exercise stream">
+          <div id="cameraPlaceholder" class="camera-placeholder">
+            <span>Camera preview will appear here</span>
+            <small>Press start and allow camera access when your browser asks.</small>
+          </div>
+        </div>
+
+        <div class="camera-actions">
+          <button id="startSession" class="session-primary" type="button">Start camera &amp; tracking</button>
+          <button id="stopSession" class="session-secondary session-secondary--danger" type="button" disabled>Stop session</button>
+        </div>
+      </section>
+
+      <!-- Recording status and progress (guided-session equivalent) -->
+      <aside class="control-panel">
+        <section class="metrics-card">
+          <h2 id="stepLabel">Step 0 of 0</h2>
+
+          <div class="form-feedback" id="instructionText">
+            Press start to begin your guided session.
+          </div>
+
+          <div class="angle-row">
+            <span>Progress</span>
+            <strong id="progressPct">0%</strong>
+          </div>
+          <div class="angle-meter"><div id="progressFill"></div></div>
+
+          <div class="angle-row">
+            <span>Hold</span>
+            <strong id="holdPct">0%</strong>
+          </div>
+          <div class="angle-meter"><div id="holdFill"></div></div>
+
+          <p id="correctionText" class="session-error" role="status"></p>
+
+          <button id="restartExercise" class="session-secondary" type="button" hidden>Restart exercise</button>
+        </section>
+      </aside>
+    </div>
+
+    <p id="sessionError" class="session-error" role="alert"></p>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/perform_exercise.js"></script>
+</body>
+</html>

@@ -1,0 +1,367 @@
+/* ─────────────────────────────────────────────────────────────
+   PhysioAI — Live Session Layout
+   Shared by the therapist Record Exercise page and the patient
+   Perform Exercise page: a large camera preview alongside a
+   grouped, scannable side panel of controls.
+   ───────────────────────────────────────────────────────────── */
+
+.session-shell {
+  width: min(1400px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 3rem 0 5rem;
+}
+
+.session-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+}
+
+.session-header h1 {
+  font: 800 clamp(2rem, 5vw, 3.5rem) / 1.1 var(--font-heading);
+  color: var(--color-primary);
+  margin: .4rem 0;
+}
+
+.session-header p { color: var(--color-text-secondary); }
+
+.session-kicker {
+  color: var(--color-accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-size: .75rem;
+}
+
+.connection-badge {
+  padding: .55rem 1rem;
+  border-radius: 99px;
+  background: #edf1ef;
+  color: var(--color-text-secondary);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.connection-badge.live {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+}
+
+.session-exit { color: var(--color-text-secondary); }
+
+/* ─── Layout: camera dominates, controls sit in a side panel ─── */
+
+.session-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 340px);
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 960px) {
+  .session-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Camera section ─── */
+
+.camera-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.camera-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: #13231f;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+/* The live video/annotated feed and the placeholder message share this
+   container. Both are pinned edge-to-edge with absolute positioning so
+   they always line up with each other regardless of viewport size. */
+.camera-card img,
+.camera-card video,
+.camera-card canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* keep the whole body in frame — never crop */
+  display: none;
+}
+
+.camera-card img.active { display: block; }
+
+.camera-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.camera-placeholder[hidden] { display: none; }
+
+.camera-placeholder small { color: #afbfba; }
+
+.camera-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  /* Portrait phones: a 4:3 landscape-ish box wastes space, so switch to
+     a taller frame that still shows a standing person head-to-toe. */
+  .camera-card { aspect-ratio: 3 / 4; }
+}
+
+/* ─── Side panel: grouped, spaced-out control sections ─── */
+
+.control-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.control-group {
+  background: var(--color-bg-card, #fff);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+.control-group-title {
+  font: 700 1rem var(--font-heading);
+  color: var(--color-primary);
+  margin: 0 0 1rem;
+}
+
+.author-summary {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+
+.author-summary strong {
+  font-size: 1.4rem;
+  color: var(--color-primary);
+}
+
+.author-summary span {
+  color: var(--color-text-secondary);
+  min-height: 1.2em;
+}
+
+/* ─── Buttons ─── */
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: .85rem;
+}
+
+.button-row:first-of-type { margin-top: 0; }
+
+.button-row--secondary {
+  padding-top: .1rem;
+}
+
+.session-primary,
+.session-secondary {
+  flex: 1 1 140px;
+  min-width: 140px;
+  min-height: 46px;
+  padding: .8rem 1.2rem;
+  border-radius: 99px;
+  font: 600 .95rem var(--font-sans);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.session-primary {
+  border: 0;
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.session-primary:hover:not(:disabled) {
+  background: var(--color-primary-light);
+}
+
+.session-secondary {
+  border: 1px solid var(--color-border);
+  background: #fff;
+  color: var(--color-text-primary);
+}
+
+.session-secondary:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* Destructive actions (stop the camera, delete a keyframe) get a visually
+   distinct style so they're never mistaken for a routine secondary action. */
+.session-secondary--danger {
+  border-color: var(--color-error-bg);
+  color: var(--color-error);
+  background: var(--color-error-bg);
+}
+
+.session-secondary--danger:hover:not(:disabled) {
+  background: var(--color-error);
+  border-color: var(--color-error);
+  color: #fff;
+}
+
+.session-primary:disabled,
+.session-secondary:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+/* ─── Form fields (editing panel) ─── */
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  margin-top: 1rem;
+}
+
+.field-group:first-child { margin-top: 0; }
+
+.field-group label {
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.field-group input,
+.field-group textarea {
+  padding: .65rem .85rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font: 400 .95rem var(--font-sans);
+  color: var(--color-text-primary);
+  background: #fff;
+}
+
+.field-group input:focus,
+.field-group textarea:focus {
+  outline: none;
+  border-color: var(--color-border-focus);
+}
+
+.field-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.field-row .field-group {
+  flex: 1;
+  margin-top: 1rem;
+}
+
+.keyframe-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  margin-bottom: 1.25rem;
+}
+
+.keyframe-navigation strong {
+  flex: 1;
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: .9rem;
+}
+
+.keyframe-navigation .session-secondary {
+  flex: 0 0 auto;
+  min-width: 100px;
+}
+
+/* ─── Patient perform-exercise metrics panel ─── */
+
+.metrics-card {
+  background: var(--color-bg-card, #fff);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-md);
+}
+
+.metrics-card h2 {
+  font: 700 1.3rem var(--font-heading);
+  margin: 0 0 1rem;
+  color: var(--color-primary);
+}
+
+.angle-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.2rem;
+}
+
+.angle-row strong { font-size: 1.5rem; color: var(--color-primary); }
+
+.angle-meter {
+  height: 8px;
+  background: #e8edeb;
+  border-radius: 99px;
+  overflow: hidden;
+  margin-top: .5rem;
+}
+
+.angle-meter div {
+  height: 100%;
+  width: 0;
+  background: var(--color-accent);
+  transition: width .15s;
+}
+
+.form-feedback {
+  margin: 1.25rem 0;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  background: var(--color-accent-light);
+  color: var(--color-primary);
+  min-height: 72px;
+}
+
+.metrics-card > .session-secondary {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.session-error {
+  color: var(--color-error);
+  margin-top: 1rem;
+}
+
+.preload { visibility: hidden; }
+
+@media (max-width: 800px) {
+  .session-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

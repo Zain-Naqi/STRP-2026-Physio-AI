@@ -179,18 +179,83 @@ const EXERCISE_CATEGORIES = [
   }
 ];
 
+// Python exercise service (FastAPI) — serves exercises recorded with the
+// therapist authoring tool, stored under fullbody_RnM/Exercises.
+const PYTHON_SERVICE_HOST = 'localhost:8000';
+
 document.addEventListener('DOMContentLoaded', () => {
   const categoryGrid = document.getElementById('category-grid');
   const exerciseList = document.getElementById('exercise-list');
-  
+  const recordedGrid = document.getElementById('recorded-exercises-grid');
+
   if (categoryGrid) {
     initLibraryPage(categoryGrid);
   }
-  
+
   if (exerciseList) {
     initCategoryPage(exerciseList);
   }
+
+  if (recordedGrid) {
+    loadRecordedExercises(recordedGrid);
+  }
 });
+
+/**
+ * Fetch exercises recorded with the therapist authoring tool
+ * (fullbody_RnM/Exercises, served by the Python exercise service) and
+ * render them as selectable cards leading into perform_exercise.html.
+ */
+async function loadRecordedExercises(gridEl) {
+  const countEl = document.getElementById('recorded-count');
+
+  try {
+    const response = await fetch(`http://${PYTHON_SERVICE_HOST}/api/exercises`);
+    if (!response.ok) {
+      throw new Error(`Request failed with status ${response.status}`);
+    }
+
+    const data = await response.json();
+    const exercises = data.exercises || [];
+
+    if (countEl) {
+      countEl.textContent = `${exercises.length} recorded exercise${exercises.length === 1 ? '' : 's'}`;
+    }
+
+    if (exercises.length === 0) {
+      gridEl.innerHTML = `
+        <div style="grid-column: 1 / -1; text-align: center; padding: 3rem 1rem; color: var(--color-text-secondary);">
+          <p>No recorded exercises yet. Ask your therapist to record one.</p>
+        </div>
+      `;
+      return;
+    }
+
+    gridEl.innerHTML = exercises.map(ex => `
+      <a href="perform_exercise.html?exercise=${encodeURIComponent(ex.name)}" class="category-card" aria-label="Perform ${ex.name}">
+        <div class="category-card-media">
+          <span class="exercise-count-badge">${ex.num_states} steps</span>
+        </div>
+        <div class="category-card-body">
+          <h3 class="category-card-title">${ex.name}</h3>
+          <p class="category-card-desc">${ex.description || 'A guided exercise recorded by your therapist.'}</p>
+          <div class="category-card-footer">
+            <span>Begin session</span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </div>
+        </div>
+      </a>
+    `).join('');
+  } catch (reason) {
+    console.error('Failed to load recorded exercises:', reason);
+    if (countEl) countEl.textContent = 'Unavailable';
+    gridEl.innerHTML = `
+      <div style="grid-column: 1 / -1; text-align: center; padding: 3rem 1rem; color: var(--color-text-secondary);">
+        <p>Could not reach the exercise service. Make sure it is running on port 8000.</p>
+      </div>
+    `;
+  }
+}
 
 /**
  * Initialize Browse Library Main Grid

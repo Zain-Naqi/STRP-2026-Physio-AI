@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise Author | PhysioAI</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/exercise-session.css">
+</head>
+<body class="preload">
+  <nav class="dashboard-nav">
+    <div class="nav-container">
+      <a class="nav-brand" href="patient-home.html">
+        <div class="nav-logo-icon">P</div>
+        <span class="nav-brand-name">PhysioAI</span>
+      </a>
+      <a class="session-exit" href="exercise-category.html?category=shoulder-rehabilitation">Exit session</a>
+    </div>
+  </nav>
+
+  <main class="session-shell">
+    <!-- Exercise details -->
+    <header class="session-header">
+      <div>
+        <span class="session-kicker">Therapist authoring</span>
+        <h1 id="exerciseName">Create Exercise</h1>
+        <p>Record movement keyframes, then review and configure each position.</p>
+      </div>
+      <div id="connectionBadge" class="connection-badge">Ready</div>
+    </header>
+
+    <div class="session-layout">
+      <!-- Camera and live preview -->
+      <section class="camera-section" aria-label="Camera preview">
+        <div class="camera-card">
+          <img id="videoStream" alt="Live exercise authoring stream">
+          <div id="cameraPlaceholder" class="camera-placeholder">
+            <span>Camera preview will appear here</span>
+            <small>Press start and allow camera access when your browser asks.</small>
+          </div>
+        </div>
+
+        <div class="camera-actions">
+          <button id="startSession" class="session-primary" type="button">Start camera &amp; tracking</button>
+          <button id="stopSession" class="session-secondary session-secondary--danger" type="button" disabled>Stop session</button>
+        </div>
+      </section>
+
+      <aside class="control-panel">
+        <!-- Recording status and progress -->
+        <section class="control-group">
+          <h2 class="control-group-title">Recording status</h2>
+          <div class="author-summary">
+            <strong id="keyframeCount">0 keyframes</strong>
+            <span id="authorStatus">Ready</span>
+          </div>
+        </section>
+
+        <!-- Recording controls -->
+        <section id="recordingControls" class="control-group">
+          <h2 class="control-group-title">Recording controls</h2>
+
+          <div class="button-row">
+            <button id="toggleRecording" class="session-primary" type="button" disabled>Start recording</button>
+          </div>
+          <div class="button-row button-row--secondary">
+            <button id="captureKeyframe" class="session-secondary" type="button" disabled>Capture keyframe</button>
+            <button id="enterEditing" class="session-secondary" type="button" disabled>Edit keyframes</button>
+          </div>
+        </section>
+
+        <!-- Editing and save -->
+        <section id="editingControls" class="control-group" hidden>
+          <h2 class="control-group-title">Edit keyframes</h2>
+
+          <div class="keyframe-navigation">
+            <button id="previousKeyframe" class="session-secondary" type="button">Previous</button>
+            <strong id="keyframeLabel">No keyframe selected</strong>
+            <button id="nextKeyframe" class="session-secondary" type="button">Next</button>
+          </div>
+
+          <div class="field-group">
+            <label for="keyframeInstruction">Instruction</label>
+            <textarea id="keyframeInstruction" rows="3" placeholder="Move to this position."></textarea>
+          </div>
+
+          <div class="field-group">
+            <label for="keyframeHold">Hold duration (seconds)</label>
+            <input id="keyframeHold" type="number" min="0" step="0.1" value="2">
+          </div>
+          <div class="field-group">
+            <label for="keyframeTolerance">Tolerance (degrees)</label>
+            <input id="keyframeTolerance" type="number" min="1" step="1" value="20">
+          </div>
+
+          <div class="button-row">
+            <button id="applyKeyframe" class="session-primary" type="button">Apply changes</button>
+          </div>
+          <div class="button-row button-row--secondary">
+            <button id="enterRecording" class="session-secondary" type="button">Back to recording</button>
+            <button id="deleteKeyframe" class="session-secondary session-secondary--danger" type="button">Delete keyframe</button>
+          </div>
+        </section>
+
+        <section class="control-group">
+          <h2 class="control-group-title">Save exercise</h2>
+
+          <div class="field-group">
+            <label for="saveExerciseName">Exercise name</label>
+            <input id="saveExerciseName" type="text" placeholder="shoulder_abduction">
+          </div>
+
+          <div class="button-row">
+            <button id="saveExercise" class="session-primary" type="button" disabled>Save exercise</button>
+          </div>
+        </section>
+      </aside>
+    </div>
+
+    <p id="sessionError" class="session-error" role="alert"></p>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/exercise-session.js?v=4"></script>
+
+</body>
+</html>
